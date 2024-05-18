@@ -1,26 +1,37 @@
 #!/usr/bin/env python3
-from Transformation2D.rotate import Rotate
 from Transformation2D.point2d import Point2D
-# from Transformation2D.translate import *
-# from Transformation2D.rotate import Rotate
-# from Transformation2D.transformation import *
 import numpy as np
 
-# Addeition and Subtaction of two points test
-def add_sub(x):
-    p1 = x
-    p2= Point2D(1,1) + p1
-    p2 = p2 - Point2D(1,1)
+# Addeition of two points test
+def add(x):
+    p2= Point2D(1,1) + x
     return p2
 
-# # # Point Rotation test
-# def rot(x):
-#     r1 = Rotate(np.pi/8)
-#     p2 = r1 * x
-#     print(p2)
+# Subtaction of two points test
+def sub(x):
+    p2 = x - Point2D(1,1)
+    return p2
+
+# check if less than of two points test
+def less(x):
+    p2 = Point2D(1,1)
+    if x < p2:
+        return True
+    else: 
+        return False
+    
+# check if equal of two points
+def equal(x):
+    p2 = Point2D()
+    if x == p2:
+        return True
+    else: 
+        return False
 
 
 
 p1 = Point2D()
-assert add_sub(p1) == p1
-# assert rot(p1) == p1
+assert add(p1) == Point2D(1,1)
+assert sub(p1) == Point2D(-1,-1)
+assert less(p1) == True
+assert equal(p1) == True
